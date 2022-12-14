@@ -57,6 +57,7 @@ async function pickFruits() {
 
 // 3.useful Promise APIs : all
 // 병렬 방식을 조금 더 보기 쉽게! all을 사용하자.
+// 비동기 실행시킨 것 중에 하나라도 실패하면 그 즉시 통신 중단
 function pickAllFruits() {
   return Promise.all([getApple(), getBanana()].then((fruits) => fruits.join(" + ")));
 }
@@ -68,3 +69,6 @@ function pickOnlyOne() {
 
 pickFruits().then(console.log);
 pickAllFruits().then(console.log);
+
+// Promise.allSettled
+// 성공한 것들은 모두 보여지도록 하고싶다 하면 Promise.allSettled 사용
