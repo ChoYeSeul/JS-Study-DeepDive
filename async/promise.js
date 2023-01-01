@@ -6,7 +6,6 @@
 // 1. Producer
 // 새로운 promise가 만들어질 때, executor는 자동적으로 실행된다.
 const promise = new Promise((resolve, reject) => {
-  console.log("test");
   setTimeout(() => {
     resolve("yes");
     // reject(new Error('no network'));
